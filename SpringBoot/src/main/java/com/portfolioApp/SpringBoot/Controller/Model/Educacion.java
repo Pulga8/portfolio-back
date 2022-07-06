@@ -19,15 +19,15 @@ public class Educacion {
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
     private Long id;
-    private String title;
+    private String titulo;
     private String descripcion;
 
     public Educacion() {
     }
 
-    public Educacion(Long id, String title, String descripcion) {
+    public Educacion(Long id, String titulo, String descripcion) {
         this.id = id;
-        this.title = title;
+        this.titulo = titulo;
         this.descripcion = descripcion;
     }
 }

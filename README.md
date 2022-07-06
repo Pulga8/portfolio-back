@@ -37,9 +37,42 @@ sudo lsof -i -P -n | grep LISTEN
 ```
 
 
+**[ERROR] Incorrect definition of table mysql.event: expected column**
+
+```sh
+cd /opt/lampp/bin
+sudo ./mysql_upgrade
+
+```
+
+**ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)**
+
+```sh
+sudo apt-get install mysql-server
+
+```
+[link](https://stackoverflow.com/questions/11657829/error-2002-hy000-cant-connect-to-local-mysql-server-through-socket-var-run)
+
+
 # Ejecución
 
 Para correrlo primero debemos prender en Xampp, los servicios MySQL y Apache.
+
+Iniciar Xampp
+
+```sh
+sudo /opt/lampp/lampp start
+```
+
+Iniciarlo con GUI
+
+```sh
+cd /opt/lampp
+
+sudo ./manager-linux.run (or manager-linux-x64.run)
+```
+
+
 
 * Luego correr el Back de SpringBoot.
 
@@ -64,3 +97,7 @@ Xampp nos ofrece un visualizador de la bd vía la ruta:
 # Información sobre el tema
 
 En el módulo 8 Programacion con Spring, justo en la sección "ABML con SpringBoot + JPA + Hibernate"
+
+# RoadMap
+
+![Ruta de aprendizaje](/assets/roadmap_backend_2.png)
