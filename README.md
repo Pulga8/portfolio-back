@@ -101,3 +101,12 @@ En el módulo 8 Programacion con Spring, justo en la sección "ABML con SpringBo
 # RoadMap
 
 ![Ruta de aprendizaje](/assets/roadmap_backend_2.png)
+
+
+
+# Algunos Links utiles
+
+[Ubuntu 16.04 - How to start xampp control panel](https://askubuntu.com/questions/890818/ubuntu-16-04-how-to-start-xampp-control-panel)
+
+
+[Install XAMPP on Ubuntu 22.04 LTS Jammy Linux](https://www.how2shout.com/linux/install-xampp-on-ubuntu-22-04-lts-jammy-linux/)

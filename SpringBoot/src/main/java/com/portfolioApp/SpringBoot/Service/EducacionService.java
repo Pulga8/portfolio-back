@@ -1,7 +1,7 @@
 package com.portfolioApp.SpringBoot.Service;
 
 import com.portfolioApp.SpringBoot.Controller.Model.Educacion;
-import com.portfolioApp.SpringBoot.Repository.EducacionRepository;
+import com.portfolioApp.SpringBoot.Repository.IEducacionRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 public class EducacionService implements IEducacionService {
 
     @Autowired
-    private EducacionRepository eduRepo;
+    private IEducacionRepository eduRepo;
 
     // Este corresponde a verPersonas()
     @Override
@@ -27,7 +27,7 @@ public class EducacionService implements IEducacionService {
     }
 
     @Override
-    public void add(Educacion edu) {
+    public void add(Educacion edu){
         eduRepo.save(edu);
     }
 

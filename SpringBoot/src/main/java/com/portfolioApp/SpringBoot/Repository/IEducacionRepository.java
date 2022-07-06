@@ -9,6 +9,6 @@ import org.springframework.stereotype.Repository;
  * @author xortb
  */
 @Repository
-public interface EducacionRepository extends JpaRepository<Educacion, Long> {
+public interface IEducacionRepository extends JpaRepository<Educacion, Long> {
 
 }

@@ -1,8 +1,8 @@
 package com.portfolioApp.SpringBoot.Controller;
 
-import com.portfolioApp.SpringBoot.Controller.Model.Educacion;
+import com.portfolioApp.SpringBoot.Controller.Model.Experiencia;
 import com.portfolioApp.SpringBoot.Service.BusinessException;
-import com.portfolioApp.SpringBoot.Service.IEducacionService;
+import com.portfolioApp.SpringBoot.Service.IExperienciaService;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,25 +20,24 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
-public class Controller {
+public class ExperienciaController {
 
     @Autowired
-    private IEducacionService eduServ;
+    private IExperienciaService expeService;
 
-    @GetMapping("/educacion/traer")
-    public List<Educacion> list() throws BusinessException {
-        return eduServ.list();
+    @GetMapping("experiencia/traer")
+    public List<Experiencia> list() throws BusinessException {
+        return expeService.list();
     }
 
-    @PostMapping("/educacion/crear")
-    public String add(@RequestBody Educacion edu) throws BusinessException {
-        eduServ.add(edu);
-        return "se agregó dicha educacion";
+    @PostMapping("/experiencia/crear")
+    public String add(@RequestBody Experiencia expe) {
+        expeService.add(expe);
+        return "se agregó dicha experiencia";
     }
 
-
-    @DeleteMapping("/delete/{id}")
-    public void delete(@PathVariable Long id) throws BusinessException {
-        eduServ.delete(id);
+    @DeleteMapping("experiencia/delete/{id}")
+    public void delete(@PathVariable Long id){
+        expeService.delete(id);
     }
 }
