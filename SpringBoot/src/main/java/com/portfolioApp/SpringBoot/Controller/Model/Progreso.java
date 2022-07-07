@@ -1,9 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.portfolioApp.SpringBoot.Controller.Model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,18 +13,21 @@ import lombok.Setter;
  */
 @Getter
 @Setter
+@Entity
 public class Progreso {
 
-    private int id;
-    private String title;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    private String titulo;
     private String progreso;
 
     public Progreso() {
     }
 
-    public Progreso(int id, String title, String progreso) {
+    public Progreso(Long id, String titulo, String progreso) {
         this.id = id;
-        this.title = title;
+        this.titulo = titulo;
         this.progreso = progreso;
     }
 }
