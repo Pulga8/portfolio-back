@@ -20,12 +20,12 @@ public class Progreso {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String titulo;
-    private String progreso;
+    private int progreso;
 
     public Progreso() {
     }
 
-    public Progreso(Long id, String titulo, String progreso) {
+    public Progreso(Long id, String titulo, int progreso) {
         this.id = id;
         this.titulo = titulo;
         this.progreso = progreso;
