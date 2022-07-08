@@ -29,7 +29,7 @@ public class ExperienciaController {
     public List<Experiencia> list() throws BusinessException {
         return expeService.list();
     }
-
+    
     @PostMapping("/experiencia/crear")
     public String add(@RequestBody Experiencia expe) {
         expeService.add(expe);
