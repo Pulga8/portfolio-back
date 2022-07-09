@@ -36,7 +36,7 @@ public class UsuarioController {
     }
     */
 
-    @GetMapping("/usuario/auth")
+    @PostMapping("/usuario/auth")
     public boolean autentificacion(@RequestBody Usuario user) {
         return userService.autentificacion(user);
     }

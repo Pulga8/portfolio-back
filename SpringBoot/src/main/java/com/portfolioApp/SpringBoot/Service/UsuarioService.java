@@ -37,8 +37,7 @@ public class UsuarioService implements IUsuarioService {
         List<Usuario> lista = userRepo.findAll();
         Usuario elemento = lista.get(0);
         boolean esIgual = elemento.getUsername().equals(user.getUsername())
-                && elemento.getPassword().equals(user.getPassword())
-                && elemento.getId().equals(user.getId());
+                && elemento.getPassword().equals(user.getPassword());
         return esIgual;
     }
 
