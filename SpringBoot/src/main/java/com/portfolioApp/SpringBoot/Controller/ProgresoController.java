@@ -31,13 +31,19 @@ public class ProgresoController {
     }
 
     @PostMapping("/progreso/crear")
-    public String add(@RequestBody Progreso pro) {
-        progresoService.add(pro);
+    public String add(@RequestBody Progreso prog) {
+        progresoService.add(prog);
         return "se agregó dicha experiencia";
     }
 
     @DeleteMapping("progreso/delete/{id}")
     public void delete(@PathVariable Long id) {
         progresoService.delete(id);
+    }
+
+    @PostMapping("/progreso/modificar/{id}")
+    public String upgrade(@PathVariable Long id, @RequestBody Progreso prog) {
+        progresoService.upgrade(id, prog);
+        return "se actualizó dicho progreso";
     }
 }

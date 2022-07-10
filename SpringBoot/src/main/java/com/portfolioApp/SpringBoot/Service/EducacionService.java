@@ -27,7 +27,7 @@ public class EducacionService implements IEducacionService {
     }
 
     @Override
-    public void add(Educacion edu){
+    public void add(Educacion edu) {
         eduRepo.save(edu);
     }
 
@@ -41,19 +41,15 @@ public class EducacionService implements IEducacionService {
         }
     }
 
-    //Este corresponde a borrarPersona()
-    /**
-     *
-     * @param id
-     * @return Educacion or null
-     * @throws BusinessException
-     */
     @Override
-    public Educacion search(Long id) throws BusinessException {
-        try {
-            return eduRepo.findById(id).orElse(null);
-        } catch (Exception e) {
-            throw new BusinessException(e);
+    public void upgrade(Long id, Educacion edu) {
+        Educacion antigua_edu = eduRepo.findById(id).orElse(null);
+        if (edu.getTitulo() != null) {
+            antigua_edu.setTitulo(edu.getTitulo());
         }
+        if (edu.getDescripcion() != null) {
+            antigua_edu.setDescripcion(edu.getDescripcion());
+        }
+        eduRepo.save(antigua_edu);
     }
 }

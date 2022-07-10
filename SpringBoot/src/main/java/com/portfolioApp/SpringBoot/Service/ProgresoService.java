@@ -26,8 +26,8 @@ public class ProgresoService implements IProgresoService {
     }
 
     @Override
-    public void add(Progreso pro) {
-        progresoRepository.save(pro);
+    public void add(Progreso prog) {
+        progresoRepository.save(prog);
     }
 
     @Override
@@ -36,11 +36,14 @@ public class ProgresoService implements IProgresoService {
     }
 
     @Override
-    public Progreso search(Long id) throws BusinessException {
-        try {
-            return progresoRepository.findById(id).orElse(null);
-        } catch (Exception e) {
-            throw new BusinessException();
+    public void upgrade(Long id, Progreso prog) {
+        Progreso antiguo_pro = progresoRepository.findById(id).orElse(null);
+        if (prog.getTitulo() != null) {
+            antiguo_pro.setTitulo(prog.getTitulo());
         }
+        if (prog.getProgreso() != 0) {
+            antiguo_pro.setProgreso(prog.getProgreso());
+        }
+        progresoRepository.save(antiguo_pro);
     }
 }

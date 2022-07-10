@@ -10,10 +10,6 @@ import java.util.List;
 public interface IUsuarioService {
     
     public List<Usuario> list() throws BusinessException;
-
-    /*
-    public void add(Usuario user);
-    */
     
     public boolean autentificacion(Usuario user);
     

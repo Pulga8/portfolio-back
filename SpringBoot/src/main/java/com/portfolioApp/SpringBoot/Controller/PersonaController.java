@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -32,14 +33,14 @@ public class PersonaController {
         return personaService.find(id);
     }
 
-    @PostMapping("/persona/crear")
-    public String add(@RequestBody Persona per) {
-        personaService.add(per);
-        return "se agregó la persona";
-    }
-
     @GetMapping("/persona/delete/{id}")
     public void delete(@RequestBody Long id) throws BusinessException {
         personaService.find(id);
+    }
+
+    @PostMapping("/persona/modificar/{id}")
+    public String upgrade(@PathVariable Long id, @RequestBody Persona p) {
+        personaService.upgrade(id, p);
+        return "se actualizó la persona";
     }
 }

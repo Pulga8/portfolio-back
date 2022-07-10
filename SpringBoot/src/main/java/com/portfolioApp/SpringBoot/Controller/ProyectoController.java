@@ -31,13 +31,19 @@ public class ProyectoController {
     }
 
     @PostMapping("/proyecto/crear")
-    public String add(@RequestBody Proyecto pro) {
-        proService.add(pro);
+    public String add(@RequestBody Proyecto proy) {
+        proService.add(proy);
         return "se agregó dicho proyecto";
     }
 
     @DeleteMapping("proyecto/delete/{id}")
     public void delete(@PathVariable Long id) {
         proService.delete(id);
+    }
+
+    @PostMapping("/proyecto/modificar/{id}")
+    public String upgrade(@PathVariable Long id, @RequestBody Proyecto proy) {
+        proService.upgrade(id, proy);
+        return "se actualizó dicho proyecto";
     }
 }

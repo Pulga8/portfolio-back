@@ -11,10 +11,11 @@ public interface IProyectoService {
 
     public List<Proyecto> list() throws BusinessException;
 
-    public void add(Proyecto pro);
+    public void add(Proyecto proy);
 
     public void delete(Long id);
 
-    public Proyecto search(Long id) throws BusinessException;
+    /*Chequear que pro y pro de proyecto y progreso sean distintos*/
+    public void upgrade(Long id, Proyecto proy);
 
 }

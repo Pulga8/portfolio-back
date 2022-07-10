@@ -9,9 +9,10 @@ import java.util.List;
  */
 public interface IPersonaService {
 
-    public void add(Persona per);
-
     public Persona find(Long id) throws BusinessException;
 
     public List<Persona> list() throws BusinessException;
+    
+    public void upgrade(Long id, Persona p);
+
 }

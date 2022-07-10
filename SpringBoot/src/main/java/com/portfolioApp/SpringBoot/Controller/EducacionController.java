@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -39,5 +40,11 @@ public class EducacionController {
     @DeleteMapping("/educacion/delete/{id}")
     public void delete(@PathVariable Long id) throws BusinessException {
         eduServ.delete(id);
+    }
+
+    @PostMapping("/educacion/modificar/{id}")
+    public String upgrade(@PathVariable Long id,@RequestBody Educacion edu) {
+        eduServ.upgrade(id, edu);
+        return "se actualizó dicha educacion";
     }
 }

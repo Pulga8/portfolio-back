@@ -31,17 +31,21 @@ public class ExperienciaService implements IExperienciaService {
     }
 
     @Override
-    public void delete(Long id)  {
+    public void delete(Long id) {
         expeRepository.deleteById(id);
     }
 
     @Override
-    public Experiencia search(Long id) throws BusinessException {
-        try {
-            return expeRepository.findById(id).orElse(null);
-        } catch (Exception e) {
-            throw new BusinessException();
+    public void upgrade(Long id, Experiencia expe) {
+        Experiencia antigua_expe = expeRepository.findById(id).orElse(null);
+        /*Tratar el caso en que getTitulo, sea null por ej*/
+        if (expe.getTitulo() != null) {
+            antigua_expe.setTitulo(expe.getTitulo());        
         }
+        if (expe.getDescripcion() != null) {
+            antigua_expe.setDescripcion(expe.getDescripcion());
+        }
+        expeRepository.save(antigua_expe);
     }
 
 }

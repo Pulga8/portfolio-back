@@ -26,8 +26,8 @@ public class ProyectoService implements IProyectoService {
     }
 
     @Override
-    public void add(Proyecto pro) {
-        proRepository.save(pro);
+    public void add(Proyecto proy) {
+        proRepository.save(proy);
     }
 
     @Override
@@ -36,12 +36,15 @@ public class ProyectoService implements IProyectoService {
     }
 
     @Override
-    public Proyecto search(Long id) throws BusinessException {
-        try {
-            return proRepository.findById(id).orElse(null);
-        } catch (Exception e) {
-            throw new BusinessException();
+    public void upgrade(Long id, Proyecto proy) {
+        Proyecto antiguo_pro = proRepository.findById(id).orElse(null);
+        if (proy.getTitulo() != null) {
+            antiguo_pro.setTitulo(proy.getTitulo());
         }
+        if (proy.getDescripcion() != null) {
+            antiguo_pro.setDescripcion(proy.getDescripcion());
+        }
+        proRepository.save(antiguo_pro);
     }
 
 }

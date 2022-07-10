@@ -25,13 +25,6 @@ public class UsuarioService implements IUsuarioService {
         }
     }
 
-    /*
-    Esto está comentado pues no queremos añadir más usuarios.
-    @Override
-    public void add(Usuario user) {
-        userRepo.save(user);
-    }*/
-
     @Override
     public boolean autentificacion(Usuario user) {
         List<Usuario> lista = userRepo.findAll();

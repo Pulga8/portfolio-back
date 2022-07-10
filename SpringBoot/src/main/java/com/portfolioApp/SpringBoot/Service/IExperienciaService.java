@@ -15,6 +15,6 @@ public interface IExperienciaService {
 
     public void delete(Long id);
 
-    public Experiencia search(Long id) throws BusinessException;
+    public void upgrade(Long id, Experiencia expe);
 
 }

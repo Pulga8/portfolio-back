@@ -15,5 +15,5 @@ public interface IEducacionService {
 
     public void delete(Long id) throws BusinessException;
 
-    public Educacion search(Long id) throws BusinessException;
+    public void upgrade(Long id, Educacion edu);
 }

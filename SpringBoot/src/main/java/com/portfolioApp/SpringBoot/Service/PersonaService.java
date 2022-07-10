@@ -24,11 +24,6 @@ public class PersonaService implements IPersonaService {
             throw new BusinessException();
         }
     }
-    
-    @Override
-    public void add(Persona per) {
-        persRepository.save(per);
-    }
 
     @Override
     public Persona find(Long id) throws BusinessException {
@@ -37,6 +32,27 @@ public class PersonaService implements IPersonaService {
         } catch (Exception e) {
             throw new BusinessException(e);
         }
+    }
+
+    @Override
+    public void upgrade(Long id, Persona p) {
+        Persona antigua_p = persRepository.findById(id).orElse(null);
+        if (p.getNombre() != null) {
+            antigua_p.setNombre(p.getNombre());
+        }
+        if (p.getApellido() != null) {
+            antigua_p.setApellido(p.getApellido());
+        }
+        if (p.getProfesion() != null) {
+            antigua_p.setProfesion(p.getProfesion());
+        }
+        if (p.getAbout() != null) {
+            antigua_p.setAbout(p.getAbout());
+        }
+        if (p.getImg_portada() != null) {
+            antigua_p.setImg_portada(p.getImg_portada());
+        }
+        persRepository.save(antigua_p);
     }
 
 }

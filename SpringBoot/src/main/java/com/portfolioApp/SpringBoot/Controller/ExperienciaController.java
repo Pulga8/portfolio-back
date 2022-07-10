@@ -40,4 +40,10 @@ public class ExperienciaController {
     public void delete(@PathVariable Long id){
         expeService.delete(id);
     }
+    
+    @PostMapping("experiencia/modificar/{id}")
+    public String upgrade(@PathVariable Long id,@RequestBody Experiencia expe){
+        expeService.upgrade(id, expe);
+        return "se actualizó dicha experiencia";
+    }
 }

@@ -11,10 +11,10 @@ public interface IProgresoService {
 
     public List<Progreso> list() throws BusinessException;
 
-    public void add(Progreso expe);
+    public void add(Progreso prog);
 
     public void delete(Long id);
 
-    public Progreso search(Long id) throws BusinessException;
+    public void upgrade(Long id, Progreso prog);
 
 }
