@@ -26,7 +26,7 @@ public class PersonaService implements IPersonaService {
     }
 
     @Override
-    public Persona find(Long id) throws BusinessException {
+    public Persona find(Long id) {
         return persRepository.findById(id).orElse(null);
     }
 
@@ -44,6 +44,9 @@ public class PersonaService implements IPersonaService {
         }
         if (p.getAbout() != null) {
             antigua_p.setAbout(p.getAbout());
+        }
+        if (p.getImg_perfil() != null) {
+            antigua_p.setImg_perfil(p.getImg_perfil());
         }
         if (p.getImg_portada() != null) {
             antigua_p.setImg_portada(p.getImg_portada());

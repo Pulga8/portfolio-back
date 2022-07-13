@@ -12,7 +12,7 @@ public interface IPersonaService {
     public Persona find(Long id);
 
     public List<Persona> list() throws BusinessException;
-    
+
     public void upgrade(Long id, Persona p);
 
 }
