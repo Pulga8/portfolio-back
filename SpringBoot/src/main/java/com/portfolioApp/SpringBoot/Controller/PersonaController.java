@@ -29,7 +29,7 @@ public class PersonaController {
     }
 
     @GetMapping("/persona/traer/{id}")
-    public Persona find(Long id) throws BusinessException {
+    public Persona find(@PathVariable Long id) {
         return personaService.find(id);
     }
 

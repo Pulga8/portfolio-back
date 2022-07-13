@@ -27,11 +27,7 @@ public class PersonaService implements IPersonaService {
 
     @Override
     public Persona find(Long id) throws BusinessException {
-        try {
-            return persRepository.findById(id).orElse(null);
-        } catch (Exception e) {
-            throw new BusinessException(e);
-        }
+        return persRepository.findById(id).orElse(null);
     }
 
     @Override

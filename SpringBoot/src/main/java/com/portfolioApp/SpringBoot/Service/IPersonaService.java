@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface IPersonaService {
 
-    public Persona find(Long id) throws BusinessException;
+    public Persona find(Long id);
 
     public List<Persona> list() throws BusinessException;
     
