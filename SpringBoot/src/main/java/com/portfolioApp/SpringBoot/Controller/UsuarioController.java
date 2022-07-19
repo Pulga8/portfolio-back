@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author xortb
  */
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {"http://localhost:4200","https://hosting-portfolio-angular.web.app"})
 public class UsuarioController {
 
     @Autowired
